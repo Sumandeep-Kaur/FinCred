@@ -1,0 +1,51 @@
+/* Custom Loan Response Styles */
+
+.loan-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* Loan Detail Cards */
+.loan-detail-card {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.loan-detail-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Status Icon */
+.status-icon {
+  font-size: 3rem;
+  opacity: 0.2;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .loan-card {
+    margin: 0 15px;
+  }
+}
+
+/* Animations (optional, requires animate.css) */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate__animated {
+  animation-duration: 0.5s;
+}

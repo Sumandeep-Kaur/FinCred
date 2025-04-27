@@ -1,0 +1,88 @@
+.form-control {
+  transition: all 0.3s ease;
+  box-shadow: none;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #ced4da;
+}
+
+/* Style for input group */
+.input-group-text {
+  border-color: #ced4da;
+  border-right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  cursor: pointer;
+}
+
+/* Red icon for invalid state */
+.input-group.is-invalid .input-group-text {
+  border-color: #dc3545 !important;
+  color: #dc3545;
+}
+
+/* Green icon for valid state */
+.input-group.is-valid .input-group-text {
+  border-color: #28a745 !important;
+  color: #28a745;
+}
+
+/* Hover effect for the icon */
+.input-group-text:hover {
+  background-color: #e9ecef;
+}
+
+
+
+.btn {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: all 0.3s ease;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+/* Animated progress bar */
+.progress {
+  overflow: visible;
+  border-radius: 10px;
+}
+
+.progress-bar {
+  transition: width 0.5s ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,73 @@
+<div class="container-fluid" *ngIf="loanResponse">
+  <div class="row min-vh-100 d-flex justify-content-center align-items-center">
+    <div class="col-10 col-md-7">
+      <div class="card loan-card animate__animated animate__fadeIn">
+        <div class="card-header text-white" [ngClass]="loanResponse.approved ? 'bg-success' : 'bg-danger'">
+          <div class="d-flex align-items-center justify-content-between">
+            <div>
+              <i [ngClass]="loanResponse.approved ? 'fas fa-check-circle' : 'fas fa-times-circle'"
+                class="me-3 fa-2x"></i>
+              <span class="h3 mb-0">
+                {{ loanResponse.approved ? 'Loan Approved' : 'Loan Denied' }}
+              </span>
+            </div>
+            <div class="status-icon">
+              <i [ngClass]="loanResponse.approved ? 'fas fa-thumbs-up' : 'fas fa-thumbs-down'"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="row">
+            <!-- Approved Loan Details -->
+            <div *ngIf="loanResponse.approved" class="col-12">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="loan-detail-card">
+                    <h6 class="text-muted">Approved Amount</h6>
+                    <p class="h4 text-success" *ngIf="loanResponse.approvedAmount <= loanResponse.requestedAmount">
+                      ${{ loanResponse.approvedAmount }}
+                    </p>
+                    <p class="h4 text-success" *ngIf="loanResponse.approvedAmount > loanResponse.requestedAmount">
+                      ${{ loanResponse.requestedAmount }}
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="loan-detail-card">
+                    <h6 class="text-muted">Interest Rate</h6>
+                    <p class="h4 text-success">{{ loanResponse.interestRate }}%</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="loan-detail-card">
+                    <h6 class="text-muted">Approval Probability</h6>
+                    <p class="h4 text-success">{{ loanResponse.approvalProbability | percent:'1.1-2' }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Denied Loan Message -->
+            <div *ngIf="!loanResponse.approved" class="col-12 text-center">
+              <p class="lead text-muted">Unfortunately, your loan application could not be approved at this time due to</p>
+              <ul class="list-unstyled mt-3">
+                <li *ngFor="let reason of loanResponse.denialReasons" class="text-danger">
+                  {{reason}}
+                </li>
+              </ul>
+            </div>
+          </div>
+          <p class="small text-info" *ngIf="loanResponse.approvedAmount > loanResponse.requestedAmount">
+            You can avail a maximum loan of ${{ loanResponse.approvedAmount }}
+          </p>
+          <div class="text-center mt-4">
+            <button class="btn btn-outline-primary btn-lg shadow-sm" routerLink="/">
+              <i class="fas fa-redo me-2"></i>Apply Again
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
