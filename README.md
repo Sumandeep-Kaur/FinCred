@@ -1,17 +1,20 @@
 # FinCred - Line of Credit Eligibility Check Application
 
-## Overview
+## 📖 About Fincred
 
-**Fincred** is a web application that helps users check their eligibility for a personal loan or line of credit.  
-Instead of applying through slow, manual processes, users can fill in their financial details and instantly find out:
-- Whether they are eligible
-- The maximum amount they could get
-- The estimated interest rate
-- The probability of approval
-- Any reasons for denial (if applicable)
-- A validation check on their entered credit score
+**Fincred** is a modern web-based credit eligibility check tool designed to help users understand their borrowing power before they formally apply for a loan or line of credit.  
 
-This project uses synthetic data, multiple machine learning models, and a mix of Java Spring Boot (backend), Python (ML API), and Angular (frontend) to deliver fast, accurate results — all without needing external credit bureau connections.
+By entering key financial details — such as income, expenses, credit utilization, and self-reported credit score — users receive:
+- A real-time **eligibility decision** (yes/no)
+- The **maximum approved amount** they may qualify for
+- The **estimated interest rate**
+- The **probability of approval**
+- **Reasons for denial** (if not eligible)
+
+The system combines a **Java Spring Boot backend**, a **Python Flask-based ML API**, and an **Angular frontend** to deliver fast, reliable, and transparent eligibility checks — all in under 1 minute.
+
+Whether you are exploring your financial options or building a fintech solution, Fincred showcases how modern AI can transform credit decisions into a fast, fair, and scalable process.
+
 
 ---
 
